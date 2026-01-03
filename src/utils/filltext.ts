@@ -12,7 +12,7 @@ const removeBG = ({ field, pdf }: IRemoveBG): void => {
     }
 }
 
-const fillText = ({ pdf, field, text, page, color, fontSize, font, maxWidth, fontHeight, coords }: IFillText) => {
+const fillText = ({ pdf, field, text, page, color, fontSize, font, maxWidth, fontHeight = 22, coords }: IFillText) => {
     removeBG({ field, pdf });
 
     for (const widget of field.acroField.getWidgets()) {

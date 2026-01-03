@@ -16,7 +16,7 @@ export interface IFillText {
     fontSize: number;
     maxWidth: number;
     font: PDFFont;
-    fontHeight: number;
+    fontHeight?: number;
     coords: {
         x?: number;
         y?: number;
