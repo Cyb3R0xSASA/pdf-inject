@@ -1,6 +1,6 @@
 import type { IWrapText } from "../types/index.js";
 
-const wrapText = ({ font, fontSize, maxWidth, text }: IWrapText) => {
+const wrapText = ({ font, fontSize, maxWidth, text }: IWrapText): string[] => {
     if (!text) return [''];
     const words = String(text).split(' ');
     const lines = [];
