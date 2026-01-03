@@ -1,0 +1,27 @@
+{
+  "name": "pdf-inject",
+  "version": "1.0.0",
+  "description": "pdf injection testing repo",
+  "repository": "https://github.com/Cyb3R0xSASA/pdf-inject",
+  "author": "Cyb3R0xSASA <elmohtarftop@gmail.com>",
+  "license": "Apache-2.0",
+  "private": false,
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "test": "tsc && node dist/."
+  },
+  "dependencies": {
+    "fontkit": "^2.0.4",
+    "fs": "^0.0.1-security",
+    "pdf-lib": "^1.17.1"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
