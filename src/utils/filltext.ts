@@ -12,21 +12,25 @@ const removeBG = ({ field, pdf }: IRemoveBG): void => {
     }
 }
 
-const fillText = ({ pdf, field, text, page, color, fontSize, font, maxWidth, fontHeight = 22, coords }: IFillText) => {
+const fillText = ({ pdf, field, text, page, color, fontSize, font, maxWidth, fontHeight = 22, coords, center }: IFillText) => {
     removeBG({ field, pdf });
 
     for (const widget of field.acroField.getWidgets()) {
         const { x, y } = widget.getRectangle();
         const lines = wrapText({ fontSize, text, font, maxWidth });
+        const { width } = page.getSize()
 
         let height = y;
         let counter = 0;
         for (const line of lines) {
             const textWidth = font.widthOfTextAtSize(line, fontSize);
+            const coordX = center ? (width - textWidth) / 2 : coords.x ? x + maxWidth - textWidth + coords.x : x + maxWidth - textWidth;
+            const coordY = counter === 0 ? (coords.y ? coords.y + y : y) : (coords.y ? coords.y + height : height);
+            console.log(text, coordX, center);
 
             page.drawText(line, {
-                x: coords.x ? x + maxWidth - textWidth + coords.x : x + maxWidth - textWidth,
-                y: counter === 0 ? (coords.y ? coords.y + y : y) : (coords.y ? coords.y + height : height),
+                x: coordX,
+                y: coordY,
                 font,
                 size: fontSize,
                 color,
