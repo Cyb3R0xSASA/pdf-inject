@@ -14,7 +14,8 @@
         "coords": {
             "x": -100,
             "y": 5
-        }
+        },
+        "center": false
     },
     {
         "id": 2,
@@ -30,7 +31,8 @@
         "coords": {
             "x": -150,
             "y": 10
-        }
+        },
+        "center": true
     },
     {
         "id": 3,
@@ -46,7 +48,8 @@
         "coords": {
             "x": -140,
             "y": 8
-        }
+        },
+        "center": false
     },
     {
         "id": 4,
@@ -62,7 +65,8 @@
         "coords": {
             "x": -140,
             "y": 8
-        }
+        },
+        "center": false
     },
     {
         "id": 5,
@@ -78,7 +82,8 @@
         "coords": {
             "x": -140,
             "y": 8
-        }
+        },
+        "center": false
     },
     {
         "id": 6,
@@ -94,7 +99,8 @@
         "coords": {
             "x": -140,
             "y": 8
-        }
+        },
+        "center": false
     },
     {
         "id": 7,
@@ -110,7 +116,8 @@
         "coords": {
             "x": -120,
             "y": 6
-        }
+        },
+        "center": false
     },
     {
         "id": 8,
@@ -126,6 +133,7 @@
         "coords": {
             "x": -120,
             "y": 6
-        }
+        },
+        "center": false
     }
 ]

@@ -1,4 +1,4 @@
-import type { PDFFont, PDFDocument, PDFPage, PDFField, RGB, PDFAcroField } from "pdf-lib";
+import type { PDFFont, PDFDocument, PDFPage, PDFField, RGB } from "pdf-lib";
 
 export interface IWrapText {
     text: string;
@@ -21,9 +21,25 @@ export interface IFillText {
         x?: number;
         y?: number;
     }
+    center: boolean;
 }
 
 export interface IRemoveBG {
     field: PDFField;
     pdf: PDFDocument;
+}
+
+export interface TemplateItem {
+    id: number;
+    fontSize: number;
+    maxWidth: number;
+    text: string;
+    fontHeight: number;
+    fontWeight?: number;
+    color: [number, number, number];
+    coords: {
+        x: number;
+        y: number;
+    };
+    center: boolean;
 }
