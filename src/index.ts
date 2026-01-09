@@ -20,12 +20,12 @@ const font = await pdf.embedFont(baseFont);
 const page = pdf.getPage(0);
 const form = pdf.getForm();
 
-for (const { id, color, coords, fontHeight, fontSize, maxWidth, text, fontWeight, center } of data) {
-    const field = form.getTextField(`Text${id}`)
+for (const { id, color, coords, fontHeight, fontSize, maxWidth, text, center } of data) {
+    const field = form.getTextField(`Text${id}`);
     field.setText('');
-    const colors = rgb(0, 0, 0);
+    const colors = rgb(...color);
 
-    fillText({ pdf, field, color: colors, font, fontSize, maxWidth, page, text: `النص رقم: ${id}`, coords, center });
+    fillText({ pdf, field, color: colors, font, fontSize, maxWidth, page, text, coords, center, fontHeight });
 }
 
 form.flatten();

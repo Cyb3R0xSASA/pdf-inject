@@ -10,6 +10,21 @@ export interface IWrapText {
 export interface IFillText {
     pdf: PDFDocument;
     field: PDFField;
+    text: string | string[];
+    page: PDFPage;
+    color: RGB;
+    fontSize: number;
+    maxWidth: number;
+    font: PDFFont;
+    fontHeight?: number;
+    coords: {
+        x?: number;
+        y?: number;
+    }
+    center: boolean;
+}
+
+export interface IDrawText {
     text: string;
     page: PDFPage;
     color: RGB;
@@ -35,7 +50,6 @@ export interface TemplateItem {
     maxWidth: number;
     text: string;
     fontHeight: number;
-    fontWeight?: number;
     color: [number, number, number];
     coords: {
         x: number;
