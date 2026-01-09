@@ -15,8 +15,10 @@
     "test": "tsc && node dist/."
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "fontkit": "^2.0.4",
     "fs": "^0.0.1-security",
+    "mongodb": "^7.0.0",
     "pdf-lib": "^1.17.1"
   },
   "devDependencies": {
