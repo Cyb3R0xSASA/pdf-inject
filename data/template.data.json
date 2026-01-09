@@ -1,49 +1,49 @@
 [
     {
         "id": 1,
-        "fontSize": 14,
+        "fontSize": 7,
         "maxWidth": 250,
-        "text": "وسط النصرية",
+        "text": " ",
         "fontHeight": 22,
         "fontWeight": 1,
         "color": [
             1,
             1,
-            0
+            1
         ],
         "coords": {
-            "x": -100,
-            "y": 5
+            "x": -103,
+            "y": 16
         },
         "center": false
     },
     {
         "id": 2,
-        "fontSize": 14,
+        "fontSize": 8,
         "maxWidth": 250,
-        "text": "وسط النصرية",
+        "text": "قرآن كريم ودراسات اسلامية",
         "fontHeight": 22,
         "color": [
-            1,
             0,
-            1
+            0,
+            0
         ],
         "coords": {
-            "x": -150,
-            "y": 10
+            "x": -130,
+            "y": 8
         },
-        "center": true
+        "center": false
     },
     {
         "id": 3,
-        "fontSize": 14,
+        "fontSize": 8,
         "maxWidth": 250,
-        "text": "وسط النصرية",
+        "text": "الصف الاول المتوسط",
         "fontHeight": 22,
         "color": [
-            1,
             0,
-            1
+            0,
+            0
         ],
         "coords": {
             "x": -140,
@@ -53,13 +53,13 @@
     },
     {
         "id": 4,
-        "fontSize": 14,
+        "fontSize": 8,
         "maxWidth": 250,
-        "text": "وسط النصرية",
+        "text": "الفصل الدراسي الثاني",
         "fontHeight": 22,
         "color": [
-            1,
-            1,
+            0,
+            0,
             0
         ],
         "coords": {
@@ -70,14 +70,14 @@
     },
     {
         "id": 5,
-        "fontSize": 14,
+        "fontSize": 8,
         "maxWidth": 250,
-        "text": "وسط النصرية",
+        "text": "7441 هـ",
         "fontHeight": 22,
         "color": [
             0,
-            1,
-            1
+            0,
+            0
         ],
         "coords": {
             "x": -140,
@@ -87,52 +87,35 @@
     },
     {
         "id": 6,
-        "fontSize": 14,
+        "fontSize": 10,
         "maxWidth": 250,
-        "text": "وسط النصرية",
+        "text": "",
         "fontHeight": 22,
         "color": [
-            0,
+            1,
             1,
             1
         ],
         "coords": {
-            "x": -140,
+            "x": -100,
             "y": 8
         },
         "center": false
     },
     {
         "id": 7,
-        "fontSize": 14,
+        "fontSize": 10,
         "maxWidth": 250,
-        "text": "وسط النصرية",
+        "text": "",
         "fontHeight": 22,
         "color": [
             1,
-            0,
+            1,
             1
         ],
         "coords": {
             "x": -120,
-            "y": 6
-        },
-        "center": false
-    },
-    {
-        "id": 8,
-        "fontSize": 14,
-        "maxWidth": 250,
-        "text": "وسط النصرية",
-        "fontHeight": 22,
-        "color": [
-            1,
-            0,
-            1
-        ],
-        "coords": {
-            "x": -120,
-            "y": 6
+            "y": 8
         },
         "center": false
     }
