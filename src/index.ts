@@ -30,7 +30,7 @@ const main = async ({ output, grade, subject, data }: IMain): Promise<void> => {
         drawLinkedText(
             page,
             pdf,
-            " ".repeat(112),
+            " ".repeat(124),
             196,
             4,
             font,

@@ -106,8 +106,8 @@ export const baseData = ({ grade, school, subject, principle, teacher, lessons }
     {
         "id": 7,
         "fontSize": 10,
-        "maxWidth": 250,
-        "text": principle ?? "جميع الحقوق محفوظة لدي موقع ينافس @ 5202",
+        "maxWidth": 280,
+        "text": principle ?? "جميع الحقوق محفوظة لتحضير بلس للمزيد اضغط هنا",
         "fontHeight": 22,
         "color": [
             1,
