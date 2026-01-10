@@ -2,8 +2,8 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "fs";
 import { join } from "path";
 import { PDFDocument, rgb } from "pdf-lib";
 import * as fontkit from 'fontkit'
-import type { IItem, ILesson, IMain, ITemplateItem } from "./types/index.js";
-import fillText from "./utils/filltext.js";
+import type { IItem, ILesson, IMain } from "./types/index.js";
+import fillText, { drawLinkedText } from "./utils/filltext.js";
 import { baseData, stages } from "./data/data.js";
 import pullData from "./utils/db.js";
 
@@ -26,6 +26,16 @@ const main = async ({ output, grade, subject, data }: IMain): Promise<void> => {
         const colors = rgb(...color);
 
         fillText({ pdf, field, color: colors, font, fontSize, maxWidth, page, text, coords, center, fontHeight });
+        drawLinkedText(
+            page,
+            pdf,
+            " ".repeat(112),
+            196,
+            4,
+            font,
+            9,
+            'https://ynafs.com',
+        );
     }
 
     form.flatten();
@@ -39,7 +49,6 @@ const main = async ({ output, grade, subject, data }: IMain): Promise<void> => {
     if (!existsSync(subjectOutPut))
         mkdirSync(subjectOutPut);
     writeFileSync(join(subjectOutPut, `${subject}-${grade}.pdf`), bytes);
-
 };
 
 
@@ -55,9 +64,8 @@ const run = async () => {
                     [0]?.weeks.map(week => week.map(lesson => `× ${lesson.unit} ${lesson.lesson ? `- ${lesson.lesson?.replaceAll(')', '').replaceAll('(', '')}` : ''}`))
 
                     lessons?.push(['اختبارات شفهية وعملية'], ['اختبارات نهائية'])
-                    // console.log(subj.title === 'التربية الفنية')
                     const output = join(process.cwd(), 'src', 'out-pdf')
-                    subj.title === 'Top Goal2' ? await main({ output, grade: grade.title, subject: subj.title, data: baseData({ grade: grade.title, subject: subj.title, lessons: lessons as string[][] }) }) : ''
+                    await main({ output, grade: grade.title, subject: subj.title.includes('-') ? (subj.title.split('-')[0] as string) : subj.title, data: baseData({ grade: grade.title, subject: subj.title, lessons: lessons as string[][] }) });
                 }
             }
         }

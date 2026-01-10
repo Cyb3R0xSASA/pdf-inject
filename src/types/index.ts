@@ -23,6 +23,7 @@ export interface IFillText {
         y?: number;
     }
     center: boolean;
+    link?: string;
 }
 
 export interface IDrawText {
@@ -38,6 +39,7 @@ export interface IDrawText {
         y?: number;
     }
     center: boolean;
+    link?: string;
     dir?: 'rtl' | 'ltr'
 }
 

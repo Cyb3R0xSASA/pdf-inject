@@ -107,7 +107,7 @@ export const baseData = ({ grade, school, subject, principle, teacher, lessons }
         "id": 7,
         "fontSize": 10,
         "maxWidth": 250,
-        "text": principle ?? "",
+        "text": principle ?? "جميع الحقوق محفوظة لدي موقع ينافس @ 5202",
         "fontHeight": 22,
         "color": [
             1,
@@ -115,7 +115,7 @@ export const baseData = ({ grade, school, subject, principle, teacher, lessons }
             1
         ],
         "coords": {
-            "x": -120,
+            "x": 73, // -120
             "y": 8
         },
         "center": false
