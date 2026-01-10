@@ -322,7 +322,7 @@ export const baseData = ({ grade, school, subject, principle, teacher, lessons }
         ],
         "coords": {
             "x": 1,
-            "y": 89
+            "y": 85
         },
         center: false,
 
@@ -338,7 +338,7 @@ export const baseData = ({ grade, school, subject, principle, teacher, lessons }
         ],
         "coords": {
             "x": 1,
-            "y": 89
+            "y": 85
         },
         center: false,
 
@@ -354,7 +354,7 @@ export const baseData = ({ grade, school, subject, principle, teacher, lessons }
         ],
         "coords": {
             "x": 1,
-            "y": 89
+            "y": 85
         },
         center: false,
 
@@ -370,7 +370,7 @@ export const baseData = ({ grade, school, subject, principle, teacher, lessons }
         ],
         "coords": {
             "x": 1,
-            "y": 89
+            "y": 85
         },
         center: false,
 
@@ -385,8 +385,8 @@ export const baseData = ({ grade, school, subject, principle, teacher, lessons }
             0, 0, 0
         ],
         "coords": {
-            "x": -1,
-            "y": 50
+            "x": (lessons[16] as string[])?.length === 1 ? -1 : 1,
+            "y": (lessons[16] as string[])?.length === 1 ? 50 : 85
         },
         center: false,
 

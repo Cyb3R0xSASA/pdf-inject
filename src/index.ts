@@ -10,7 +10,8 @@ import pullData from "./utils/db.js";
 
 const main = async ({ output, grade, subject, data }: IMain): Promise<void> => {
     const baseFont = readFileSync(join(process.cwd(), './src/fonts/Cairo-VariableFont_slnt,wght.ttf'));
-    const pdfDoc = readFileSync(join(process.cwd(), './src/templates/temp3.pdf'))
+    const pdfName = 'temp1.1.pdf'
+    const pdfDoc = readFileSync(join(process.cwd(), './src/templates/' + pdfName))
 
 
     const pdf = await PDFDocument.load(pdfDoc);
@@ -21,7 +22,7 @@ const main = async ({ output, grade, subject, data }: IMain): Promise<void> => {
     const form = pdf.getForm();
 
     for (const { id, color, coords, fontHeight, fontSize, maxWidth, text, center } of data) {
-        const field = form.getTextField(`Text${id}`);
+        const field = form.getTextField(`Text${id <= 6 || pdfName !== 'temp1.1.pdf' ? id : id + 1}`);
         field.setText('');
         const colors = rgb(...color);
 
