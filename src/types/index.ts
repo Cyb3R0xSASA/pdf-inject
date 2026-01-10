@@ -1,3 +1,4 @@
+import type { ObjectId } from "mongodb";
 import type { PDFFont, PDFDocument, PDFPage, PDFField, RGB } from "pdf-lib";
 
 export interface IWrapText {
@@ -37,6 +38,7 @@ export interface IDrawText {
         y?: number;
     }
     center: boolean;
+    dir?: 'rtl' | 'ltr'
 }
 
 export interface IRemoveBG {
@@ -44,11 +46,11 @@ export interface IRemoveBG {
     pdf: PDFDocument;
 }
 
-export interface TemplateItem {
+export interface ITemplateItem {
     id: number;
     fontSize: number;
     maxWidth: number;
-    text: string;
+    text: string | string[];
     fontHeight: number;
     color: [number, number, number];
     coords: {
@@ -56,4 +58,38 @@ export interface TemplateItem {
         y: number;
     };
     center: boolean;
+}
+
+export interface IStage {
+    name: string;
+    id: number;
+};
+
+export interface IItem {
+    _id: ObjectId;
+    id: number;
+    title: string;
+};
+
+export interface IMain {
+    output: string;
+    grade: string;
+    subject: string;
+    data: ITemplateItem[]
+};
+
+export interface IBaseData {
+    school?: string;
+    subject?: string;
+    grade?: string;
+    principle?: string;
+    teacher?: string;
+    lessons: string[][];
+};
+
+export interface ILesson {
+    weeks: {
+        unit: string;
+        lesson: string;
+    }[][]
 }
