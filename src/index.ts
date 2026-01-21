@@ -10,8 +10,8 @@ import pullData from "./utils/db.js";
 
 const main = async ({ output, grade, subject, data }: IMain): Promise<void> => {
     const baseFont = readFileSync(join(process.cwd(), './src/fonts/Cairo-VariableFont_slnt,wght.ttf'));
-    const pdfName = 'temp1.1.pdf'
-    const pdfDoc = readFileSync(join(process.cwd(), './src/templates/' + pdfName))
+    const pdfName = 'temp1.0.0.pdf'
+    const pdfDoc = readFileSync(join(process.cwd(), './src/templates/' + pdfName));
 
 
     const pdf = await PDFDocument.load(pdfDoc);
@@ -22,7 +22,7 @@ const main = async ({ output, grade, subject, data }: IMain): Promise<void> => {
     const form = pdf.getForm();
 
     for (const { id, color, coords, fontHeight, fontSize, maxWidth, text, center } of data) {
-        const field = form.getTextField(`Text${id <= 6 || pdfName !== 'temp1.1.pdf' ? id : id + 1}`);
+        const field = form.getTextField(`Text${id <= 6 || pdfName !== 'temp1.1.0.pdf' ? id : id + 1}`);
         field.setText('');
         const colors = rgb(...color);
 
@@ -30,8 +30,8 @@ const main = async ({ output, grade, subject, data }: IMain): Promise<void> => {
         drawLinkedText(
             page,
             pdf,
-            " ".repeat(124),
-            196,
+            " ".repeat(210),
+            215,
             4,
             font,
             9,
@@ -57,7 +57,7 @@ const run = async () => {
     for (const stage of stages) {
         const grades = await pullData<IItem>('grades', { stage_id: stage.id });
         for (const grade of grades) {
-            const terms = await pullData<IItem>('terms', stage.id === 3 ? { track_id: grade.id } : { grade_id: grade._id.toString() })
+            const terms = await pullData<IItem>('terms', stage.id === 3 && grade.title === 'السنة الأولى المشتركة' ? { track_id: grade.id } : { grade_id: grade._id.toString() })
             for (const term of terms) {
                 const subjects = await pullData<IItem>('subjects', { term_id: term._id.toString() })
                 for (const subj of subjects) {
