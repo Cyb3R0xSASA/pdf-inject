@@ -1,4 +1,4 @@
-import { Db, MongoClient, type WithId } from "mongodb";
+import { Db, MongoClient, type WithId, type Document } from "mongodb";
 import 'dotenv/config'
 
 const mongoClient = async (): Promise<Db> => {
@@ -11,7 +11,7 @@ const mongoClient = async (): Promise<Db> => {
     return db;
 };
 
-const pullData = async <T>(collectionName: string, option?: any): Promise<WithId<T>[]> => {
+const pullData = async <T extends Document>(collectionName: string, option?: any): Promise<WithId<T>[]> => {
     const collection = (await mongoClient()).collection<T>(collectionName);
     return collection.find(option ?? {}).toArray();
 };
