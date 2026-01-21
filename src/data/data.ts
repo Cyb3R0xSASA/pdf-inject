@@ -106,8 +106,8 @@ export const baseData = ({ grade, school, subject, principle, teacher, lessons }
     {
         "id": 7,
         "fontSize": 10,
-        "maxWidth": 280,
-        "text": principle ?? "جميع الحقوق محفوظة لتحضير بلس للمزيد اضغط هنا",
+        "maxWidth": 430,
+        "text": principle ?? "جميع الحقوق محفوظة لتحضير بلس © 3202  للحصول على نسخة باسم المعلم والمدير اضغط هنا",
         "fontHeight": 22,
         "color": [
             1,
@@ -115,10 +115,10 @@ export const baseData = ({ grade, school, subject, principle, teacher, lessons }
             1
         ],
         "coords": {
-            "x": 73, // -120
+            "x": 80, // -120
             "y": 8
         },
-        "center": false
+        "center": true
     },
     {
         id: 8,
